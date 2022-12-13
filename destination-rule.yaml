@@ -1,7 +1,8 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
-  name: service-mesh-destination-rule
+  name: service-mesh-demo-destination-rule
+  namespace: service-mesh-demo
 spec:
   host: orders
   trafficPolicy:
