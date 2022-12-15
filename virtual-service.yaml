@@ -11,7 +11,7 @@ spec:
   http:
   - match:
     - uri:
-        exact: /orders
+        exact: /
     route:
     - destination:
         host: orders
