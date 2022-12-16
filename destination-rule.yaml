@@ -9,9 +9,9 @@ spec:
     loadBalancer:
       simple: RANDOM
   subsets:
-  - name: v1
+  - name: recommendation
     labels:
-      version: v1
-  - name: v2
+      app: recommendation
+  - name: recommendation-food
     labels:
-      version: v2
+      app: recommendation-food
