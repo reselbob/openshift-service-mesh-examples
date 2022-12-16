@@ -11,7 +11,7 @@ spec:
   subsets:
   - name: recommendation
     labels:
-      app: recommendation
+      category: general
   - name: recommendation-food
     labels:
-      app: recommendation-food
+      category: food
