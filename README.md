@@ -5,5 +5,5 @@
 Get the URL to the application route by way of the service mesh
 
 ```
-oc -n istio-system get route istio-ingressgateway -o jsonpath='{.spec.host}'  && echo \n
+GATEWAY_URL=$(oc -n istio-system get route istio-ingressgateway -o jsonpath='{.spec.host}') && echo $GATEWAY_URL
 ```
