@@ -1,1 +1,14 @@
-TO BE PROVIDED
+apiVersion: v1
+kind: Service
+metadata:
+  name: recommendations
+  labels:
+    app: recommendations
+    service: recommendations
+spec:
+  ports:
+  - port: 8080
+    name: http
+  selector:
+    app: recommendations-food
+    app: recommendations-music
