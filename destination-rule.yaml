@@ -11,4 +11,4 @@ spec:
   subsets:
   - name: recommendation-food
     labels:
-      version: v1
+      version: food
