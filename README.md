@@ -1,3 +1,9 @@
 # openshift-service-mesh-examples
 
-![UNDER CONSTRUCTION](https://pluspng.com/img-png/under-construction-png-hd-free-under-construction-construction-sign-801.png)
+**UNDER CONSTRUCTION**
+
+Get the URL to the application route by way of the service mesh
+
+```
+oc -n istio-system get route istio-ingressgateway -o jsonpath='{.spec.host}'
+```
