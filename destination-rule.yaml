@@ -12,3 +12,6 @@ spec:
   - name: recommendation-food
     labels:
       version: food
+  - name: recommendation-music
+    labels:
+      version: music
