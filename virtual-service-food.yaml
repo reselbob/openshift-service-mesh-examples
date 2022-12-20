@@ -7,10 +7,10 @@ spec:
   hosts:
   - "recommendations"
   http:
-    route:
-    - destination:
-        host: recommendations
-        subset: recommendation-food
-        port:
-          number: 8080
-      weight: 100
+    - route:
+      - destination:
+          host: recommendations
+          subset: recommendation-food
+          port:
+            number: 8080
+        weight: 100
