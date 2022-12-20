@@ -13,4 +13,4 @@ spec:
         subset: recommendation-food
         port:
           number: 8080
-       weight: 100
+      weight: 100
