@@ -4,7 +4,7 @@ metadata:
   name: service-mesh-demo-destination-rule
   namespace: service-mesh-demo
 spec:
-  host: orders
+  host: recommendations
   trafficPolicy:
     loadBalancer:
       simple: RANDOM
