@@ -1,31 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: payments
-  namespace: service-mesh-demo
-  labels:
-    app: payments
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: payments
-  template:
-    metadata:
-      labels:
-        app: payments
-    spec:
-      containers:
-      - name: payments
-        image: quay.io/reselbob/service-mesh-payments:v1.0
-        ports:
-        - containerPort: 8080
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-   namespace: service-mesh-demo
   name: recommendations-food
+  namespace: service-mesh-demo
   labels:
     app: recommendations
     version: food
@@ -33,23 +10,27 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: recommendations
+      app: recommedations
       version: food
   template:
     metadata:
+      annotations:
+        sidecar.istio.io/inject: "true"
       labels:
-        app: recommendations
+        app: recommedations
         version: food
     spec:
       containers:
       - name: recommendations-food
-        image: quay.io/reselbob/service-mesh-recommendations:v1.0
+        image: quay.io/reselbob/service-mesh-payments:v1.0
+        imagePullPolicy: IfNotPresent
         env:
-          - name: RECOMMENDATION_CATEGORY
-            value: "FOOD"
+        - name: RECOMMENDATION_CATEGORY
+          value: "FOOD"
         ports:
         - containerPort: 8080
 ---
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -62,19 +43,22 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: recommendations
+      app: recommedations
       version: music
   template:
     metadata:
+      annotations:
+        sidecar.istio.io/inject: "true"
       labels:
-        app: recommendations
+        app: recommedations
         version: music
     spec:
       containers:
       - name: recommendations-music
-        image: quay.io/reselbob/service-mesh-recommendations:v1.0
+        image: quay.io/reselbob/service-mesh-payments:v1.0
+        imagePullPolicy: IfNotPresent
         env:
-          - name: RECOMMENDATION_CATEGORY
-            value: "MUSIC"
+        - name: RECOMMENDATION_CATEGORY
+          value: "MUSIC"
         ports:
         - containerPort: 8080
