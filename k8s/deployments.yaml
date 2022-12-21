@@ -38,7 +38,7 @@ metadata:
   namespace: service-mesh-demo
   labels:
     app: recommendations
-    version: food
+    version: music
 spec:
   replicas: 1
   selector:
