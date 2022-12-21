@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: recommendations-food
-        image: quay.io/reselbob/service-mesh-payments:v1.0
+        image: quay.io/reselbob/service-mesh-recommemdations:v1.0
         imagePullPolicy: IfNotPresent
         env:
         - name: RECOMMENDATION_CATEGORY
@@ -55,7 +55,7 @@ spec:
     spec:
       containers:
       - name: recommendations-music
-        image: quay.io/reselbob/service-mesh-payments:v1.0
+        image: quay.io/reselbob/service-mesh-recommemdations:v1.0
         imagePullPolicy: IfNotPresent
         env:
         - name: RECOMMENDATION_CATEGORY
