@@ -10,14 +10,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: recommedations
+      app: recommendations
       version: food
   template:
     metadata:
       annotations:
         sidecar.istio.io/inject: "true"
       labels:
-        app: recommedations
+        app: recommendations
         version: food
     spec:
       containers:
@@ -43,14 +43,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: recommedations
+      app: recommendations
       version: music
   template:
     metadata:
       annotations:
         sidecar.istio.io/inject: "true"
       labels:
-        app: recommedations
+        app: recommendations
         version: music
     spec:
       containers:
