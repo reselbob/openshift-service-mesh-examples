@@ -4,7 +4,7 @@ This folder has the configuration files you need create the demonstration API th
 
 The services and deployments that make up the demonstration API architecture are shown in the figure below.
 
-![app arch](./images/app-architecture.png]
+![app arch](./images/app-architecture.png)
 
 There is a shell script in this folder named `sh app-setup.sh` that will install all the components required including the API's K8S namespace `service-mesh-demo`.
 
