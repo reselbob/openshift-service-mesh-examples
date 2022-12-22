@@ -1,0 +1,29 @@
+apiVersion: maistra.io/v1
+kind: ServiceMeshMemberRoll
+metadata:
+  finalizers:
+    - maistra.io/istio-operator
+  generation: 12
+  name: default
+  namespace: istio-system
+spec:
+  members:
+    - service-mesh-demo
+status:
+  observedGeneration: 12
+  pendingMembers: []
+  annotations:
+    configuredMemberCount: 0/0
+    kialiName: kiali
+  meshGeneration: 1
+  meshReconciledVersion: 2.3.0-1-1
+  conditions:
+    - lastTransitionTime: '2022-12-19T18:10:58Z'
+      message: All namespaces have been configured successfully
+      reason: Configured
+      status: 'True'
+      type: Ready
+  members: []
+  memberStatuses: []
+  terminatingMembers: []
+  configuredMembers: []
