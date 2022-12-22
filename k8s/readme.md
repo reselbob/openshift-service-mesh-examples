@@ -6,7 +6,7 @@ The services and deployments that make up the demonstration API architecture are
 
 ![app arch](./images/app-architecture.png)
 
-There is a shell script in this folder named `sh app-setup.sh` that will install all the components required including the API's K8S namespace `service-mesh-demo`.
+There is a shell script in this folder named `sh ./app-setup.sh` that will install all the components required including the API's K8S namespace `service-mesh-demo`.
 
 Run the shell script in a terminal window within an OpenShift cluster in which you have adminstrator persmissions.
 
