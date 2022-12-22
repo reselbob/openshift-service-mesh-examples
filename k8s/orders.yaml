@@ -42,3 +42,20 @@ spec:
     - protocol: TCP
       port: 8080
       targetPort: 8080
+      
+---
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: orders
+  namespace: service-mesh-demo
+  annotations:
+    openshift.io/host.generated: 'true'
+spec:
+  to:
+    kind: Service
+    name: orders
+    weight: 100
+  port:
+    targetPort: 8080
+  wildcardPolicy: None
