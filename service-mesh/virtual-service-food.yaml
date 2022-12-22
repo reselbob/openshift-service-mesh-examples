@@ -5,7 +5,7 @@ metadata:
   namespace: service-mesh-demo
 spec:
   hosts:
-  - "recommendations"
+  - recommendations
   http:
     - route:
       - destination:
