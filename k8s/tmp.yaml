@@ -45,6 +45,11 @@ spec:
       - name: orders
         image: quay.io/reselbob/service-mesh-orders:v1.0
         imagePullPolicy: IfNotPresent
+        env:
+        - name: PAYMENTS_URL
+          value: "http://payments:8080"
+        - name: RECOMMENDATIONS_URL
+          value: "http://recommendations:8080"
         ports:
         - containerPort: 8080
 ##################################################################################################
