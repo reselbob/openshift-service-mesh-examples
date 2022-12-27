@@ -2,6 +2,10 @@ echo "Setting up namespace"
 
 kubectl apply -f namespace.yaml
 
+echo "Applying the namespace to the service mesh"
+
+kubectl replace -f service-mesh.yaml
+
 echo "Setting up recommendations"
 
 kubectl apply -f recommendations.yaml
