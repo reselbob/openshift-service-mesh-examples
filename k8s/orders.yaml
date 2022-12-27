@@ -1,3 +1,26 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: orders
+  namespace: service-mesh-demo
+  labels:
+    app: orders
+    service: orders
+spec:
+  ports:
+  - port: 8080
+    name: http
+  selector:
+    app: orders
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: service-mesh-demo-orders
+  namespace: service-mesh-demo
+  labels:
+    account: orders
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -17,6 +40,7 @@ spec:
       labels:
         app: orders
     spec:
+      serviceAccountName: service-mesh-demo-orders
       containers:
       - name: orders
         image: quay.io/reselbob/service-mesh-orders:v1.0
@@ -27,23 +51,7 @@ spec:
         - name: RECOMMENDATIONS_URL
           value: "http://recommendations:8080"
         ports:
-        - containerPort: 8080
----
-
-apiVersion: v1
-kind: Service
-metadata:
-  name: orders
-  namespace: service-mesh-demo
-spec:
-  selector:
-    app: orders
-  ports:
-    - protocol: TCP
-      port: 8080
-      targetPort: 8080
-      name: tcp-api
-      
+        - containerPort: 8080   
 ---
 kind: Route
 apiVersion: route.openshift.io/v1
