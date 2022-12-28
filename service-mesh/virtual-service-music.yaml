@@ -1,7 +1,7 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: virtual-service-food
+  name: virtual-service-music
   namespace: service-mesh-demo
 spec:
   hosts:
