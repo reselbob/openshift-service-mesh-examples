@@ -7,11 +7,18 @@ spec:
   hosts:
   - "*"
   gateways:
-  - service-mesh-demo-gateway
+  - service-mesh-demo-gateway ###############################################
+                              # This Virtual Service listens for requests
+                              # coming in on this Gateway
+                              ###############################################
   http:
   - match:
     - uri:
-        exact: /
+        exact: /  ###############################################
+                  # For example, a request coming from:
+                  # http://istio-ingressgateway-istio-system.apps.mydomain.eastus.aroapp.io/
+                  # will be forwarded to the Kubernetes service named orders at port 8080
+                  ###############################################
     route:
     - destination:
         host: orders
