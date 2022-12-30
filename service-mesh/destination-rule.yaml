@@ -11,5 +11,5 @@ spec:
       version: food            # as labels in the pods metadata attribute.
   - name: recommendation-music ############################################## 
     labels:                    # Have the K8S service recommendations us
-      version: music           # pods with the label version:music
+      version: music           # pods with the label version: music
                                ##############################################
