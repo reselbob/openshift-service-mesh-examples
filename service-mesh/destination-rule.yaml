@@ -5,12 +5,11 @@ metadata:
   namespace: service-mesh-demo
 spec:
   host: recommendations
-  subsets:                    ############################################### 
-  - name: recommendation-food # Have the K8S service recommendations
-    labels:                   # use pods that have, version: food defined
-    version: food             # as labels in the pods metadata attribute.
-                              ############################################### 
-  - name: recommendation-music ############################################### 
+  subsets:                     ############################################## 
+  - name: recommendation-food  # Have the K8S service recommendations
+    labels:                    # use pods that have, version: food defined
+      version: food            # as labels in the pods metadata attribute.
+  - name: recommendation-music ############################################## 
     labels:                    # Have the K8S service recommendations us
       version: music           # pods with the label version:music
-                               ###############################################
+                               ##############################################
