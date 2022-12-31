@@ -10,7 +10,7 @@ spec:
     - route:
       - destination:                    ##############################################
           host: recommendations         # The K8S recommendations service, in addition
-          subset: recommendation-food   # to using the labels declared in its
+          subset: recommendation-music  # to using the labels declared in its
           Port:                         # spec.selector attribute, will bind to pods 
             number: 8080                # that also have labels defined in the
         weight: 100                     # recommendation-music subset of the 
